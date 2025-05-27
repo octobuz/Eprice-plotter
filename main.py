@@ -46,8 +46,6 @@ def main ():
         # Create SQLAlchemy metadata for schema definition
         metadata = MetaData()
         
-        
-
         # Define table if not exists
         prices_table = Table(
             'electricity_prices', metadata,
@@ -69,8 +67,7 @@ def main ():
             conn.execute(prices_table.insert(), insert_data)
 
         session.close()
-        
-        
+        print("Data successfully saved to the database and plot generated.")
     except requests.RequestException as e:
         print(f"Exception: {e}")
 if __name__ == "__main__":
