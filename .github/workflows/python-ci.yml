@@ -25,6 +25,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: List files
+      if: always()
       run: ls -R
 
     - name: Run tests
