@@ -36,6 +36,7 @@ def main ():
         #plt.show()
         plt.savefig("EpricePlot.png")
         
+        """
         # After saving the plot, let's place the timeseries to postgres database
         # Load environment variables for DB connection
         load_dotenv()
@@ -70,6 +71,9 @@ def main ():
         print("Data successfully saved to the database and plot generated.")
     except requests.RequestException as e:
         print(f"Exception: {e}")
+    """
+    except Exception as e:
+        print(f"An error occurred: {e}")
 if __name__ == "__main__":
     main()
     
